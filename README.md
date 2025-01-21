@@ -42,20 +42,21 @@ The primary goal of HadesFit is to provide users with a seamless way to 🔄 agg
    ```bash
    git clone https://github.com/haybnzz/HadesFit.git
    cd HadesFit
+   python app.py
 
 # Setting up Google Fit API for HadesFit
 
 ## Configure Google Fit API:
 To use the Google Fit API with HadesFit, you need to set up a project in the **Google Cloud Console**. Follow the steps below to get started.
 
----
+
 
 **### **Google Cloud Console Setup**
 
-#### **Create a Project**
-1. Navigate to [Google Cloud Console](https://console.cloud.google.com/).
-2. Click on the project dropdown at the top, then click **New Project**.
-3. Name your project (e.g., **HadesFit**) and click **Create**.
+>#### **Create a Project**
+>1. Navigate to [Google Cloud Console](https://console.cloud.google.com/).
+>2. Click on the project dropdown at the top, then click **New Project**.
+>3. Name your project (e.g., **HadesFit**) and click **Create**.
 
 #### **Enable Google Fit API**
 1. In your new project, go to **APIs & Services > Dashboard**.
