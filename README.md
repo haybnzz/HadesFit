@@ -1,22 +1,19 @@
 # HadesFit
-# HadesFit
 
-[![Python - HadesFit](https://img.shields.io/static/v1?label=Python&message=HadesFit&style=for-the-badge&logo=discord&logoSize=auto&labelColor=ebbcba&color=c79bf0)](https://github.com/haybnzz/HadesFit)
-[![MIT License](https://img.shields.io/static/v1?label=License&message=MIT&style=for-the-badge&logo=discord&logoSize=auto&labelColor=ebbcba&color=c79bf0)](https://github.com/haybnzz/HadesFit/blob/main/LICENSE)
-[![Python Version](https://img.shields.io/static/v1?label=Python&message=3.6%2B&style=for-the-badge&logo=discord&logoSize=auto&labelColor=ebbcba&color=c79bf0)](https://www.python.org/downloads/)
-[![GitHub Issues](https://img.shields.io/github/issues/haybnzz/HadesFit?style=for-the-badge&logo=discord&logoSize=auto&labelColor=ebbcba&color=c79bf0)](https://github.com/haybnzz/HadesFit/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/haybnzz/HadesFit?style=for-the-badge&logo=discord&logoSize=auto&labelColor=ebbcba&color=c79bf0)](https://github.com/haybnzz/HadesFit/pulls)
-[![GitHub Stars](https://img.shields.io/github/stars/haybnzz/HadesFit?style=for-the-badge&logo=discord&logoSize=auto&labelColor=ebbcba&color=c79bf0)](https://github.com/haybnzz/HadesFit/stargazers)
-![Profile Views](https://komarev.com/ghpvc/?username=haybnzz&style=for-the-badge&logo=discord&logoSize=auto&labelColor=ebbcba&color=c79bf0)
 
-> **HadesFit** is a Python-based application designed to streamline the integration of fitness data from Google Fit and various smartwatches into a unified fitness tracking system. 
 
----
+[![Python - HadesFit](https://img.shields.io/static/v1?label=Python&message=HadesFit&style=for-the-badge&logo=python&logoSize=auto&labelColor=4B4453&color=FF6F61)](https://github.com/haybnzz/HadesFit)
+[![MIT License](https://img.shields.io/static/v1?label=License&message=MIT&style=for-the-badge&logo=open-source-initiative&logoSize=auto&labelColor=4B4453&color=FFD166)](https://github.com/haybnzz/HadesFit/blob/main/LICENSE)
+[![Python Version](https://img.shields.io/static/v1?label=Python&message=3.6%2B&style=for-the-badge&logo=python&logoSize=auto&labelColor=4B4453&color=06D6A0)](https://www.python.org/downloads/)
+[![GitHub Issues](https://img.shields.io/github/issues/haybnzz/HadesFit?style=for-the-badge&logo=github&logoSize=auto&labelColor=4B4453&color=118AB2)](https://github.com/haybnzz/HadesFit/issues)
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/haybnzz/HadesFit?style=for-the-badge&logo=github&logoSize=auto&labelColor=4B4453&color=073B4C)](https://github.com/haybnzz/HadesFit/pulls)
+[![GitHub Stars](https://img.shields.io/github/stars/haybnzz/HadesFit?style=for-the-badge&logo=github&logoSize=auto&labelColor=4B4453&color=EF476F)](https://github.com/haybnzz/HadesFit/stargazers)
+![Profile Views](https://komarev.com/ghpvc/?username=haybnzz&style=for-the-badge&logo=github&logoSize=auto&labelColor=4B4453&color=FFD166)
+
+
 
 ### **Purpose:**  
 The primary goal of HadesFit is to provide users with a seamless way to 🔄 aggregate, 📊 analyze, and 📈 visualize their fitness data from multiple sources. By connecting with Google Fit, HadesFit can pull in data like steps 🚶, heart rate ❤️, calories burned 🔥, and sleep patterns 🛌, allowing users to see all their health metrics in one place.
-
----
 
 ### **Functionality:**
 
@@ -63,7 +60,7 @@ To use the Google Fit API with HadesFit, you need to set up a project in the **G
 
 ---
 
-### **Google Cloud Console Setup**
+**### **Google Cloud Console Setup**
 
 #### **Create a Project**
 1. Navigate to [Google Cloud Console](https://console.cloud.google.com/).
@@ -96,3 +93,4 @@ Set the environment variable to point to your credentials file:
 **On Unix-like systems (Linux/Mac):**
 ```bash
 export GOOGLE_APPLICATION_CREDENTIALS="/path/to/your/client_secret_XXXXX.json"
+**
