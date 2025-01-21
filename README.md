@@ -12,16 +12,6 @@
 
 
 
-### **Purpose:**  
-The primary goal of HadesFit is to provide users with a seamless way to 🔄 aggregate, 📊 analyze, and 📈 visualize their fitness data from multiple sources. By connecting with Google Fit, HadesFit can pull in data like steps 🚶, heart rate ❤️, calories burned 🔥, and sleep patterns 🛌, allowing users to see all their health metrics in one place.
-
-### **Functionality:**
-
-- **Google Fit Integration:**  
-  HadesFit uses Google Fit APIs to fetch and sync data. This includes activity information such as step counts, workout sessions, and nutritional data if connected through compatible apps. Users can grant or revoke access to this data via Google Fit settings, ensuring 🔒 privacy and control.
-
-- **Smartwatch Connectivity:**  
-  Beyond Google Fit, HadesFit supports integration with smartwatches. Depending on the smartwatch model, this might require direct integration through Health Connect or third-party syncing solutions. Supported devices include those running Wear OS ⌚, as well as specific brands like Samsung, Garmin, and Polar, which have their own methods of syncing with Google Fit.
 
 
 >HadesFit is a Python-based application designed to streamline the integration of fitness data from Google Fit and various smartwatches into a unified fitness tracking system. 
