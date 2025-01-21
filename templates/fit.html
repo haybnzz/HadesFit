@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steps Tracker</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<script src="https://sdk.scdn.co/spotify-player.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/spotify-web-api@1.2.0/dist/spotify-web-api.min.js"></script>
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<!-- External CSS -->
+<link rel="stylesheet" href="https://haybnzz.github.io/css/hayden.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+ <video class="background" autoplay muted loop>
+               <source src="https://storage.googleapis.com/prod-assets-parallel-life/videos/Colony_Landing.MP4" type="video/mp4">
+                 </video>
+    <div class="background"><main>
+   
+    <h1>Steps Tracker</h1>
+    <select onchange="location = this.value;">
+        <option value="/fit?view=weekly" {{ 'selected' if view == 'weekly' }}>Weekly</option>
+        <option value="/fit?view=monthly" {{ 'selected' if view == 'monthly' }}>Monthly</option>
+        <option value="/fit?view=yearly" {{ 'selected' if view == 'yearly' }}>Yearly</option>
+    </select>
+
+    <canvas id="myChart"></canvas>
+
+    <script>
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: {{ labels | safe }},
+                datasets: [{
+                    label: 'Steps',
+                    data: {{ values | safe }},
+                    fill: false,
+                    borderColor: 'rgb(75, 192, 192)',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
