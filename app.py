@@ -9,6 +9,42 @@ from datetime import datetime, timedelta
 import matplotlib.pyplot as plt
 import io
 import base64
+
+# Google Fit Configuration
+GOOGLE_FIT_SCOPES = ['https://www.googleapis.com/auth/fitness.activity.read']
+GOOGLE_CLIENT_SECRETS_FILE = "credentials.json"
+
+GOOGLE_FLOW = Flow.from_client_secrets_file(
+    GOOGLE_CLIENT_SECRETS_FILE,
+    scopes=GOOGLE_FIT_SCOPES,
+    redirect_uri='http://localhost:8000/callback'
+)
+# Route: Authorize Google OAuth
+@app.route('/authorize/google')
+def authorize_google():
+    auth_url, _ = GOOGLE_FLOW.authorization_url(prompt='consent')
+    return redirect(auth_url)
+
+
+# Route: Google OAuth Callback
+@app.route('/callback')
+def callback_google():
+    try:
+        GOOGLE_FLOW.fetch_token(authorization_response=request.url)
+        credentials = GOOGLE_FLOW.credentials
+        session['google_credentials'] = {
+            'token': credentials.token,
+            'refresh_token': credentials.refresh_token,
+            'token_uri': credentials.token_uri,
+            'client_id': credentials.client_id,
+            'client_secret': credentials.client_secret,
+            'scopes': credentials.scopes
+        }
+    except Exception as e:
+        return f"Error during Google OAuth callback: {e}"
+    return redirect(url_for('index'))
+
+
 @app.route('/fit')
 def fit():
     google_fit_data = []
