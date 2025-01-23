@@ -1,6 +1,6 @@
 # HadesFit
 
-
+![HadesFit Logo](https://github.com/haybnzz/HadesFit/blob/main/HadesFit.png?raw=true)
 
 [![Python - HadesFit](https://img.shields.io/static/v1?label=Python&message=HadesFit&style=for-the-badge&logo=python&logoSize=auto&labelColor=4B4453&color=FF6F61)](https://github.com/haybnzz/HadesFit)
 [![MIT License](https://img.shields.io/static/v1?label=License&message=MIT&style=for-the-badge&logo=open-source-initiative&logoSize=auto&labelColor=4B4453&color=FFD166)](https://github.com/haybnzz/HadesFit/blob/main/LICENSE)
@@ -42,16 +42,17 @@ The primary goal of HadesFit is to provide users with a seamless way to 🔄 agg
    ```bash
    git clone https://github.com/haybnzz/HadesFit.git
    cd HadesFit
+   pip install -r requirements.txt
    python app.py
 
-# Setting up Google Fit API for HadesFit
+
 
 ## Configure Google Fit API:
 To use the Google Fit API with HadesFit, you need to set up a project in the **Google Cloud Console**. Follow the steps below to get started.
 
 
 
-**### **Google Cloud Console Setup**
+### Google Cloud Console Setup
 
 >#### **Create a Project**
 >1. Navigate to [Google Cloud Console](https://console.cloud.google.com/).
@@ -59,6 +60,7 @@ To use the Google Fit API with HadesFit, you need to set up a project in the **G
 >3. Name your project (e.g., **HadesFit**) and click **Create**.
 
 #### **Enable Google Fit API**
+
 1. In your new project, go to **APIs & Services > Dashboard**.
 2. Click **Enable APIs and Services**.
 3. Search for `Fitness API`, select it, and click **Enable**.
@@ -70,18 +72,40 @@ To use the Google Fit API with HadesFit, you need to set up a project in the **G
     - Name your client ID (e.g., **HadesFit Client**).
     - Click **Create**.
 3. Download the JSON file named something like `client_secret_XXXXX.json`.
+4. Reaname to `credentials.json`
 
----
 
 ### **Configure HadesFit**
 
 #### **Place the JSON File**
-Move the downloaded `client_secret_XXXXX.json` into your HadesFit project folder.
+Move the downloaded `credtilasjson` into your HadesFit project folder.
 
 #### **Set Environment Variables**
 Set the environment variable to point to your credentials file:
 
-**On Unix-like systems (Linux/Mac):**
-```bash
-export GOOGLE_APPLICATION_CREDENTIALS="/path/to/your/client_secret_XXXXX.json"
-**
+
+
+
+
+## 📜 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+**Unauthorized use is strictly prohibited.**
+
+📧 Email: cubedimension@protonmail.com  
+
+
+
+### Contributors and Developers
+
+[<img src="https://avatars.githubusercontent.com/u/67865621?s=64&v=4" width="64" height="64" alt="haybnzz">](https://github.com/haybnzz)  
+
+[<img src="https://avatars.githubusercontent.com/u/144106684?s=64&v=4" width="64" height="64" alt="Glitchesminds">](https://github.com/Glitchesminds)
+
+## ☕ Support
+
+If you find this project helpful, consider buying us a coffee with cookies:
+
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-%23FFDD00?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/codeglitch)
+
