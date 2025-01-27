@@ -3,12 +3,14 @@ import requests
 from flask import Flask, render_template, request, redirect, url_for, session
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import Flow
-from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
 from datetime import datetime, timedelta
 import matplotlib.pyplot as plt
 import io
 import base64
+
+app = Flask(__name__)
+app.secret_key = os.urandom(24)  # Secret key for session management
 
 # Google Fit Configuration
 GOOGLE_FIT_SCOPES = ['https://www.googleapis.com/auth/fitness.activity.read']
@@ -19,12 +21,12 @@ GOOGLE_FLOW = Flow.from_client_secrets_file(
     scopes=GOOGLE_FIT_SCOPES,
     redirect_uri='http://localhost:8000/callback'
 )
+
 # Route: Authorize Google OAuth
 @app.route('/authorize/google')
 def authorize_google():
     auth_url, _ = GOOGLE_FLOW.authorization_url(prompt='consent')
     return redirect(auth_url)
-
 
 # Route: Google OAuth Callback
 @app.route('/callback')
@@ -44,6 +46,9 @@ def callback_google():
         return f"Error during Google OAuth callback: {e}"
     return redirect(url_for('index'))
 
+@app.route('/index')
+def index():
+    return redirect(url_for('fit', view='weekly'))
 
 @app.route('/fit')
 def fit():
@@ -54,14 +59,14 @@ def fit():
         credentials = Credentials(**session['google_credentials'])
         service = build('fitness', 'v1', credentials=credentials)
         try:
-            now = datetime.datetime.utcnow()
+            now = datetime.utcnow()
 
             if view == 'weekly':
-                start_time = now - datetime.timedelta(days=7)
+                start_time = now - timedelta(days=7)
             elif view == 'monthly':
-                start_time = now - datetime.timedelta(days=30)
+                start_time = now - timedelta(days=30)
             else:  # yearly
-                start_time = now - datetime.timedelta(days=365)
+                start_time = now - timedelta(days=365)
 
             dataset = service.users().dataset().aggregate(
                 userId="me",
@@ -85,7 +90,7 @@ def fit():
             for point in dataset.get('point', []):
                 for value in point.get('value', []):
                     if 'intVal' in value:
-                        date = datetime.datetime.fromtimestamp(int(bucket['startTimeMillis']) / 1000).strftime('%Y-%m-%d')
+                        date = datetime.fromtimestamp(int(bucket['startTimeMillis']) / 1000).strftime('%Y-%m-%d')
                         labels.append(date)
                         values.append(value['intVal'])
 
