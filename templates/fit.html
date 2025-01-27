@@ -25,9 +25,9 @@
    
     <h1>Steps Tracker</h1>
     <select onchange="location = this.value;">
-        <option value="/fit?view=weekly" {{ 'selected' if view == 'weekly' }}>Weekly</option>
-        <option value="/fit?view=monthly" {{ 'selected' if view == 'monthly' }}>Monthly</option>
-        <option value="/fit?view=yearly" {{ 'selected' if view == 'yearly' }}>Yearly</option>
+        <option value="/fit?view=weekly" {{ 'selected' if view == 'weekly' else '' }}>Weekly</option>
+        <option value="/fit?view=monthly" {{ 'selected' if view == 'monthly' else '' }}>Monthly</option>
+        <option value="/fit?view=yearly" {{ 'selected' if view == 'yearly' else '' }}>Yearly</option>
     </select>
 
     <canvas id="myChart"></canvas>
